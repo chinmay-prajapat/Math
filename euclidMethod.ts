@@ -1,23 +1,20 @@
-const GetHCF = (a, b) => {
+const GetHCF = (a: number, b: number): number => {
   if (a === 0) {
     return b;
   }
   return GetHCF(b % a, a);
 };
 
-const GetLCM = (a, b) => {
-  console.log("getLCM", a, b);
-
+const GetLCM = (a: number, b: number): number => {
   return (a * b) / GetHCF(a, b);
 };
 
-const HandlerFunction = (args) => {
+const HandlerFunction = (args: number[]): number => {
   let lcm = [...args][0];
   for (let i = 1; i < args.length; i++) {
-    lcm = GetHCF(lcm, args[i]);
-    console.log(lcm);
+    lcm = GetLCM(lcm, args[i]);
   }
   return lcm;
 };
 
-console.log(HandlerFunction([4, 6, 8]));
+console.log(HandlerFunction([12, 28, 36]));

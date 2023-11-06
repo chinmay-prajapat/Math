@@ -1,4 +1,4 @@
-const findPrime = (num: number) => {
+const findPrime = (num: number): boolean => {
   if (num < 2) {
     return false;
   }
@@ -10,11 +10,12 @@ const findPrime = (num: number) => {
   return true;
 };
 
-const range = (start: number, end: number) => {
+const range = (start: number, end: number): number | undefined => {
   for (let i = start; i <= end; i++) {
     if (findPrime(i)) {
-      console.log(i);
+      return i;
     }
   }
+  return undefined;
 };
 range(1, 10);
